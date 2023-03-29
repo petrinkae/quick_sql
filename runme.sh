@@ -49,8 +49,8 @@ If you don't specify a task, the script runs all of the default tasks in sequenc
   # ALL: main tasks (run by default)
   all | database)
     echo "=== Creating and populating database..."
-    dropdb ccd_stats
-    createdb ccd_stats
+    dropdb quick_sql
+    createdb quick_sql
   ;;&
 
   # create folders
@@ -63,7 +63,7 @@ If you don't specify a task, the script runs all of the default tasks in sequenc
   all | import)
     echo "=== Loading ccd data..."
     for import in import*.sql; do
-      psql ccd_stats -f $import;
+      psql quick_sql -f $import;
     done
   ;;&
 
@@ -71,7 +71,7 @@ If you don't specify a task, the script runs all of the default tasks in sequenc
   all | filter)
     echo "=== Filtering ccd data..."
     for filter in filter*.sql; do
-      psql ccd_stats -f $filter;
+      psql quick_sql -f $filter;
     done
   ;;&
 
@@ -79,7 +79,7 @@ If you don't specify a task, the script runs all of the default tasks in sequenc
   all | combine)
     echo "=== Joining ccd directory to ccd student data..."
     for combine in combine*.sql; do
-      psql ccd_stats -f $combine;
+      psql quick_sql -f $combine;
     done
   ;;&
 esac

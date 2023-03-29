@@ -1,0 +1,42 @@
+drop table if exists fmb cascade;
+
+CREATE TABLE fmb (
+	folioid TEXT, 
+	strap TEXT, 
+	sitestreetnumber TEXT, 
+	sitestreetname TEXT, 
+	siteunit TEXT, 
+	sitecity TEXT, 
+	sitezip TEXT, 
+	ownername TEXT, 
+	others TEXT, 
+	careof TEXT, 
+	owneraddress1 TEXT, 
+	owneraddress2 TEXT, 
+	ownercity TEXT, 
+	ownerstate TEXT, 
+	ownerzip TEXT, 
+	ownercountry TEXT, 
+	improvementcode TEXT, 
+	improvementdescription TEXT, 
+	dorcode TEXT, 
+	dordescription TEXT, 
+	justvalue TEXT, 
+	landvalue TEXT, 
+	buildingvalue TEXT, 
+	heatedarea TEXT, 
+	bathrooms TEXT, 
+	yearbuilt TEXT, 
+	pool TEXT, 
+	ornumber TEXT, 
+	saledate DATE, 
+	saleamount TEXT, 
+	grossarea TEXT, 
+	totallivingarea TEXT, 
+	landarea TEXT, 
+	landcode TEXT, 
+	landdescription TEXT, 
+	legaldescription TEXT
+);
+
+\copy fmb from 'data/fmb.csv' csv header;
